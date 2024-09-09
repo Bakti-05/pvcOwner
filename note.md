@@ -8,11 +8,11 @@ docker run --rm -v /path/to/kubeconfig:/root/.kube/config imageName -namespace=n
 # 2. With API
 go run docs/pvc_usage.go
 
-docker run --rm -p 8080:8080 -v /home/ubuntu/.kube/config:/root/.kube/config -e KUBECONFIG=/root/.kube/config balamaru/pvcusageby:3.0
+docker run --rm -p 8080:8080 -v /path/to/kubeconfig:/root/.kube/config -e KUBECONFIG=/root/.kube/config balamaru/pvcusageby:3.0
 
  atau
 
-docker run --rm -p 8080:8080 -v /home/ubuntu/.kube/config:/root/.kube/config -e KUBECONFIG=/root/.kube/config -e KUBERNETES_API_SERVER=https://103.179.33.244:6443 balamaru/pvcusageby:3.0
+docker run --rm -p 8080:8080 -v /path/to/kubeconfig:/root/.kube/config -e KUBECONFIG=/root/.kube/config -e KUBERNETES_API_SERVER=https://<kubernetesMasterIp>:6443 balamaru/pvcusageby:3.0
 
 
 POST http://ipDockerServer:8080/pvc-usage-by

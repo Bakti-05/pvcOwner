@@ -1,13 +1,15 @@
 # 1. Without API
-# Execute without docker container
+## Execute without docker container
 go run main.go -kubeconfig=/path/to/kubeconfig -namespace=namespaceName -pvc=pvcName
 
-# Execute with docker
+## Execute with docker
 docker run --rm -v /path/to/kubeconfig:/root/.kube/config imageName -namespace=namespaceName -pvc=pvcName
 
 # 2. With API
-go run docs/pvc_usage.go
+## Execute without docker container
+go run test/pvc_usage.go
 
+## Execute with docker
 docker run --rm -p 8080:8080 -v /path/to/kubeconfig:/root/.kube/config -e KUBECONFIG=/root/.kube/config balamaru/pvcusageby:3.0
 
  atau
